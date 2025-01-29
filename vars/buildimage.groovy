@@ -1,13 +1,4 @@
-define call() {
-    pipeline {
-        agent any
-
-        stages {
-            stage('Build Docker Image') {
-                steps {
-                    echo 'Hello I am buiding the Docker Image'
-                }
-            }
-        }
-    }
+def call() {
+    echo 'Hello, I am Deploying the Docker Image'
+    sh 'docker build -t myimage:latest .'
 }
